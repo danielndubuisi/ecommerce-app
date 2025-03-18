@@ -1,9 +1,12 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { assets } from "../assets/assets";
 import { Link, NavLink } from "react-router-dom";
+import { ShopContext } from "../context/ShopContextFile";
 
 const Navbar = () => {
     const [visible, setVisible] = useState(false);
+
+    const {setShowSearch} = useContext(ShopContext);
 
     return (
         <div
@@ -46,6 +49,7 @@ const Navbar = () => {
                     src={assets.search_icon}
                     className="w-5 cursor-pointer"
                     alt="search"
+                    onClick={() => setShowSearch(true)}
                 />
                 <div className="group relative">
                     <img
