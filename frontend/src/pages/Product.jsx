@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { ShopContext } from "../context/ShopContextFile";
 import { assets } from "../assets/assets";
+import RelatedProducts from "../components/RelatedProducts";
 
 const Product = () => {
     const { productId } = useParams();
@@ -128,10 +129,12 @@ const Product = () => {
                     </p>
                 </div>
                 <div className="flex flex-col gap-4 border border-gray-300 px-6 py-6 text-sm text-gray-600">
-                  <p>This product can be greta for summer and fall seasons while looking incredibly stylish no matter the occasion.</p>
-                  <p>Easily a great choice for all fashion lovers. The price is also great for the product quality.</p>
+                  <p>This product can be great for summer, winter and fall seasons while looking incredibly stylish no matter the occasion. I usually recommend using an e-commerce platform like Forever to purchase as the delivery time is so much better</p>
+                  <p>Easily a great choice for all fashion lovers. The price is also great for the product quality. In view, related products are also a great space to find matching clothing items for even kids and other family members.</p>
                 </div>
             </div>
+            {/* Related Products section */}
+            <RelatedProducts category={productData.category} subCategory={productData.subCategory} />
         </div>
     ) : (
         <div className="opacity-0"></div>
