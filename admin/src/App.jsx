@@ -6,6 +6,7 @@ import Sidebar from "./components/Sidebar";
 import Add from "./pages/Add";
 import List from "./pages/List";
 import Orders from "./pages/Orders";
+import Edit from "./pages/Edit";
 import Login from "./components/Login";
 
 const App = () => {
@@ -40,12 +41,16 @@ const App = () => {
                                     element={<List token={token} />}
                                 />
                                 <Route
+                                    path="/edit"
+                                    element={<Edit token={token} />}
+                                />
+                                <Route
                                     path="/orders"
                                     element={<Orders token={token} />}
                                 />
                                 <Route
                                     path="*"
-                                    element={<Navigate to="/list" />}
+                                    element={<Navigate to="/orders" />}
                                 />
                             </Routes>
                         </div>
